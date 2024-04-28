@@ -13,7 +13,7 @@ export default defineConfig(({ command, mode }) => {
   const { VITE_APP_TYPE } = env;
 
   // 定义 basicSsl 插件的条件逻辑
-  const sslPlugin = VITE_APP_TYPE === "replit" ? basicSsl() : undefined;
+  const sslPlugin = VITE_APP_TYPE !== "replit" ? basicSsl() : undefined;
 
   return {
     server: {
